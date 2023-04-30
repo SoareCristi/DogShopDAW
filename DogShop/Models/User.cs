@@ -1,4 +1,7 @@
 ﻿using DogShop.Models.Base;
+using System.Data;
+using System.Text.Json.Serialization;
+using DogShop.Helper;
 
 namespace DogShop.Models
 {
@@ -12,5 +15,9 @@ namespace DogShop.Models
         public Guid WishlistId { get; set; }
 
         public ICollection<Order> OrderList { get; set; }
+
+        [JsonIgnore]
+        public string PasswordHash { get; set; }
+        public Roles Role { get; set; }
     }
 }

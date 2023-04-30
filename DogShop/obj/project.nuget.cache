@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PztH0KnmUm4wYkFZzz0N4Y95lzMj5QjdmWLcGpGWlJzQEfuwKqjJavsLABN4L7ORwUGsQN8BQewahMswFRDdZQ==",
+  "dgSpecHash": "SrZKjYjPSBcEw6+qlPE1wBn58VNBCeY08e9/RpYHCqcB7iYmOT3GmAeLLsdk0o9INwc2tDXPwIDo5eUND+7jpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\crist\\Desktop\\Sem I\\DAW\\Proiect\\DogShop\\DogShop.csproj",
+  "projectFilePath": "E:\\Facultate\\Anul III\\Sem I\\DAW\\Proiect\\Git\\DogShopDAW\\DogShop\\DogShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

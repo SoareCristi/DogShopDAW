@@ -1,5 +1,7 @@
 ﻿using DogShop.Models;
 using Microsoft.EntityFrameworkCore;
+    
+
 
 namespace DogShop.Data
 {
@@ -17,7 +19,7 @@ namespace DogShop.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            // 1-1 User - Wishlist
+            // 1 - 1 User - Wishlist
             builder.Entity<User>()
                 .HasOne(u => u.Wishlist)
                 .WithOne(w => w.User)

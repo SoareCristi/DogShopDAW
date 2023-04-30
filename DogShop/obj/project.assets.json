@@ -3942,11 +3942,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\crist\\Desktop\\Sem I\\DAW\\Proiect\\DogShop\\DogShop.csproj",
+      "projectUniqueName": "E:\\Facultate\\Anul III\\Sem I\\DAW\\Proiect\\Git\\DogShopDAW\\DogShop\\DogShop.csproj",
       "projectName": "DogShop",
-      "projectPath": "C:\\Users\\crist\\Desktop\\Sem I\\DAW\\Proiect\\DogShop\\DogShop.csproj",
+      "projectPath": "E:\\Facultate\\Anul III\\Sem I\\DAW\\Proiect\\Git\\DogShopDAW\\DogShop\\DogShop.csproj",
       "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\crist\\Desktop\\Sem I\\DAW\\Proiect\\DogShop\\obj\\",
+      "outputPath": "E:\\Facultate\\Anul III\\Sem I\\DAW\\Proiect\\Git\\DogShopDAW\\DogShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Programare\\VS\\Shared\\NuGetPackages"
@@ -4018,7 +4018,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
