@@ -167,3 +167,4 @@ E:\Facultate\Anul III\Sem I\DAW\Proiect\Git\DogShopDAW\DogShop\obj\Debug\net6.0\
 E:\Facultate\Anul III\Sem I\DAW\Proiect\Git\DogShopDAW\DogShop\obj\Debug\net6.0\DogShop.pdb
 E:\Facultate\Anul III\Sem I\DAW\Proiect\Git\DogShopDAW\DogShop\obj\Debug\net6.0\DogShop.genruntimeconfig.cache
 E:\Facultate\Anul III\Sem I\DAW\Proiect\Git\DogShopDAW\DogShop\obj\Debug\net6.0\ref\DogShop.dll
+E:\Facultate\Anul III\Sem I\DAW\Proiect\Git\DogShopDAW\DogShop\bin\Debug\net6.0\BCrypt.Net-Core.dll

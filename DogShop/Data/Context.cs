@@ -23,7 +23,7 @@ namespace DogShop.Data
             builder.Entity<User>()
                 .HasOne(u => u.Wishlist)
                 .WithOne(w => w.User)
-                .HasForeignKey<Wishlist>(w => w.UserId);
+                .HasForeignKey<User>(u => u.WishlistId);
 
             // 1 - M User - Orders
             builder.Entity<User>()

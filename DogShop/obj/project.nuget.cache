@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SrZKjYjPSBcEw6+qlPE1wBn58VNBCeY08e9/RpYHCqcB7iYmOT3GmAeLLsdk0o9INwc2tDXPwIDo5eUND+7jpw==",
+  "dgSpecHash": "2x9OUrscMj9nrVvcQqJhudDtyG2sFtnDLSgXy0B7yjC3TyCWwbz4MhF2iDsakeCr6N0r9eyEmOIWtIpI2/Bccg==",
   "success": true,
   "projectFilePath": "E:\\Facultate\\Anul III\\Sem I\\DAW\\Proiect\\Git\\DogShopDAW\\DogShop\\DogShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
