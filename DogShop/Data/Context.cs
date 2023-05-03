@@ -25,6 +25,11 @@ namespace DogShop.Data
                 .WithOne(w => w.User)
                 .HasForeignKey<User>(u => u.WishlistId);
 
+            builder.Entity<Wishlist>()
+                .HasOne(w => w.User)
+                .WithOne(u => u.Wishlist)
+                .HasForeignKey<Wishlist>(w => w.UserId);
+
             // 1 - M User - Orders
             builder.Entity<User>()
                 .HasMany(u => u.OrderList)

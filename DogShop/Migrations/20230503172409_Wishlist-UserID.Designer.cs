@@ -4,6 +4,7 @@ using DogShop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogShop.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230503172409_Wishlist-UserID")]
+    partial class WishlistUserID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -143,6 +146,10 @@ namespace DogShop.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("WishlistId")
+                        .IsUnique()
+                        .HasFilter("[WishlistId] IS NOT NULL");
+
                     b.ToTable("Users");
                 });
 
@@ -164,9 +171,6 @@ namespace DogShop.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
 
                     b.ToTable("Wishlists");
                 });
@@ -220,15 +224,13 @@ namespace DogShop.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("DogShop.Models.Wishlist", b =>
+            modelBuilder.Entity("DogShop.Models.User", b =>
                 {
-                    b.HasOne("DogShop.Models.User", "User")
-                        .WithOne("Wishlist")
-                        .HasForeignKey("DogShop.Models.Wishlist", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("DogShop.Models.Wishlist", "Wishlist")
+                        .WithOne("User")
+                        .HasForeignKey("DogShop.Models.User", "WishlistId");
 
-                    b.Navigation("User");
+                    b.Navigation("Wishlist");
                 });
 
             modelBuilder.Entity("DogShop.Models.Order", b =>
@@ -246,13 +248,14 @@ namespace DogShop.Migrations
             modelBuilder.Entity("DogShop.Models.User", b =>
                 {
                     b.Navigation("OrderList");
-
-                    b.Navigation("Wishlist");
                 });
 
             modelBuilder.Entity("DogShop.Models.Wishlist", b =>
                 {
                     b.Navigation("ProductAssociative");
+
+                    b.Navigation("User")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
