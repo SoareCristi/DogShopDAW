@@ -24,5 +24,21 @@ namespace DogShop.Services
             _wishlistRepo.Delete(wishlist);
             await _wishlistRepo.SaveAsync();
         }
+
+        public Wishlist GetById(Guid id)
+        {
+            return _wishlistRepo.FindById(id);
+        }
+        public bool Save()
+        {
+            return _wishlistRepo.Save();
+        }
+        public async Task Update(Wishlist updateWishlist)
+        {
+            _wishlistRepo.Update(updateWishlist);
+            await _wishlistRepo.SaveAsync();
+        }
+
+
     }
 }

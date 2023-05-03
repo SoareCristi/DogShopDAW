@@ -1,8 +1,9 @@
 ﻿using DogShop.Data;
+using DogShop.Models;
 using DogShop.Models.Base;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace DogShop.Repositories
 {
@@ -17,16 +18,22 @@ namespace DogShop.Repositories
             _table = _context.Set<TEntity>();
         }
 
-        //GetAll
-        public async Task<List<TEntity>> GetAllAsync()
-        {
-            return await _table.AsNoTracking().ToListAsync(); // cand iau datele din db, fac modif, dau save s-ar face update automat la baza de date ; AsNoTracking - de folosit cand nu vrei sa faci modificari asupra datelor
-        }
+        //public async Task<List<TEntity>> GetAllAsync()
+        //{
+        //    Console.WriteLine("asdf");
+        //    return await _table.AsNoTracking().ToListAsync();
+        //}
 
-        public IQueryable<TEntity> GetAllAsQueryable()
-        {
-            return _table.AsQueryable();
-        }
+        //public async Task<IEnumerable<TEntity>> GetAllAsync()
+        //{
+        //    Console.WriteLine("asdf");
+        //    return await _table.ToListAsync();
+        //}
+
+        //public IQueryable<TEntity> GetAllAsQueryable()
+        //{
+        //    return _table.AsQueryable();
+        //}
 
         //Create
         public void Create(TEntity entity)
@@ -120,6 +127,9 @@ namespace DogShop.Repositories
             return await _table.FindAsync(id);
         }
 
+        public IQueryable<TEntity> FindAll()
+        {
+            return _table;
+        }
     }
 }
-//do refactor

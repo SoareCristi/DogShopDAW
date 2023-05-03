@@ -5,8 +5,9 @@ namespace DogShop.Repositories
     public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         //Get all data
-        Task<List<TEntity>> GetAllAsync();
-        IQueryable<TEntity> GetAllAsQueryable();
+        //Task<List<TEntity>> GetAllAsync();
+        //Task<IEnumerable<TEntity>> GetAllAsync();
+        //IQueryable<TEntity> GetAllAsQueryable();
 
         //Create
         void Create(TEntity entity);
@@ -25,6 +26,7 @@ namespace DogShop.Repositories
         //Find
         TEntity FindById(Guid id);
         Task<TEntity> FindByIdAsync(Guid id);
+        IQueryable<TEntity> FindAll();
 
         //Save
         bool Save();

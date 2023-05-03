@@ -8,5 +8,10 @@ namespace DogShop.Repositories
         public UserRepository(Context context) : base(context)
         {
         }
+
+        public User FindByEmail(string email)
+        {
+            return _table.FirstOrDefault(x => x.Email == email);
+        }
     }
 }
