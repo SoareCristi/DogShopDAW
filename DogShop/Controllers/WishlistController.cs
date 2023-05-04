@@ -36,6 +36,8 @@ namespace DogShop.Controllers
 
             await _wishlistService.Create(wishlist);
             Console.WriteLine(wishlist.Id);
+            user.WishlistId = wishlist.Id;
+            _userService.Save();
             return Ok();
         }
 
