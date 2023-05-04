@@ -39,5 +39,45 @@ namespace DogShop.Controllers
             return Ok();
         }
 
+        [HttpPut("UpdateWishlist/{id}")]
+        public async Task<IActionResult> UpdateWishlist(Guid id, [FromBody] WishlistRequestDTO updateWishlist)
+        {
+            var wishlist = _wishlistService.GetById(id);
+            if (wishlist == null)
+            {
+                return BadRequest("Wishlist does not exist");
+            }
+            wishlist.UserId = updateWishlist.UserId;
+            wishlist.DateModified = DateTime.Now;
+            await _wishlistService.Update(wishlist);
+            return Ok();
+        }
+
+
+        [HttpGet("GetWishlistById/{id}")]
+        public async Task<IActionResult> GetWishlistById(Guid id)
+        {
+            var wishlist = _wishlistService.GetById(id);
+            if (wishlist == null)
+            {
+                return NotFound();//BadRequest("Wishlist does not exist");
+            }
+            return Ok(wishlist);
+        }
+
+        //async task to delete wishlist by id
+        [HttpDelete("DeleteWishlist/{id}")]
+        public async Task<IActionResult> DeleteWishlist(Guid id)
+        {
+            var wishlist = _wishlistService.GetById(id);
+            if (wishlist == null)
+            {
+                return BadRequest("Wishlist does not exist");
+            }
+            await _wishlistService.Delete(wishlist);
+            _wishlistService.Save();
+            return Ok();
+        }
+
     }
 }
