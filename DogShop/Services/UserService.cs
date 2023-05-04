@@ -5,7 +5,6 @@ using DogShop.Models.DTO;
 using DogShop.Repositories;
 using BCryptNet = BCrypt.Net.BCrypt;
 
-
 namespace DogShop.Services
 {
     public class UserService: IUserService

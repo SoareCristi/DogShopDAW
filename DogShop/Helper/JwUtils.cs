@@ -14,6 +14,9 @@ namespace DogShop.Helper
         public JwtUtils(IOptions<AppSettings> appSettings)
         {
             _appSettings = appSettings.Value;
+            _appSettings.JwtToken = "DogShopAppJWtToken2023FMI";
+            //dintr-un motiv sau altul nu reusesc sa iau tokenul din fisierul de configurare
+            //desi connection string-ul il ia fara probleme, de aceea am pus aici tokenul
         }
         public string GenerateJwtToken(User user)
         {

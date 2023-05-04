@@ -14,10 +14,12 @@ builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.C
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddRepositories();
 builder.Services.AddServices();
-builder.Services.AddJwtUtils();
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+builder.Services.AddJwtUtils();
 
 
 var app = builder.Build();
