@@ -1,5 +1,6 @@
 ﻿using DogShop.Data;
 using DogShop.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DogShop.Repositories
 {

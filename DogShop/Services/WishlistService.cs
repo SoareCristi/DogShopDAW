@@ -39,6 +39,11 @@ namespace DogShop.Services
             await _wishlistRepo.SaveAsync();
         }
 
+        public IEnumerable<IGrouping<Guid, dynamic>> GetAllWishlistsWithProducts()
+        {
+            return _wishlistRepo.GetAllWishlistsWithProducts();
+        }
+
 
     }
 }

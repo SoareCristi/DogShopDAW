@@ -9,5 +9,6 @@ namespace DogShop.Services
         Wishlist GetById(Guid id);
         bool Save();
         Task Update(Wishlist updateWishlist);
+        IEnumerable<IGrouping<Guid, dynamic>> GetAllWishlistsWithProducts();
     }
 }

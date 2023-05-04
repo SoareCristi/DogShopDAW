@@ -67,6 +67,13 @@ namespace DogShop.Controllers
             return Ok(wishlist);
         }
 
+        [HttpGet("GetAllWishlistsWithProducts")]
+        public async Task<IActionResult> GetAllWishlistsWithProducts()
+        {
+            var wishlists = _wishlistService.GetAllWishlistsWithProducts();
+            return Ok(wishlists);
+        }
+
         [HttpDelete("DeleteWishlist/{id}")]
         public async Task<IActionResult> DeleteWishlist(Guid id)
         {
@@ -79,6 +86,8 @@ namespace DogShop.Controllers
             _wishlistService.Save();
             return Ok();
         }
+
+       
 
     }
 }

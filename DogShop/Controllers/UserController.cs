@@ -80,7 +80,7 @@ namespace DogShop.Controllers
             var response = _userService.Authentificate(user);
             if (response == null)
             {
-                return BadRequest("Invalid");
+                return BadRequest("Username or password is invalid!");
             }
             return Ok();
         }
@@ -132,7 +132,7 @@ namespace DogShop.Controllers
         }
 
         [HttpDelete("DeleteUser/{id}")]
-        [Authorization(Roles.WebAdmin, Roles.Admin)]
+        //[Authorization(Roles.WebAdmin, Roles.Admin)]
         public async Task<IActionResult> DeleteUser(Guid id)
         {
             var user = _userService.GetById(id);

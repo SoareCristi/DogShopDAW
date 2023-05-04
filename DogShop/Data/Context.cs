@@ -11,10 +11,12 @@ namespace DogShop.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Wishlist> Wishlists { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<AssociativeProductOrder> AssociativeProductOrders { get; set; }
+        public DbSet<AssociativeProductWishlist> AssociativeProductWishlists { get; set; }
+
 
         public Context(DbContextOptions<Context> options) : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
