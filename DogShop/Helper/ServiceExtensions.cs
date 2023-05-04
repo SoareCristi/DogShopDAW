@@ -11,6 +11,7 @@ namespace DogShop.Helper.Extensions
         {
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IWishlistRepository, WishlistRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             return services;
         }
@@ -19,6 +20,7 @@ namespace DogShop.Helper.Extensions
         {
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IWishlistService, WishlistService>();
+            services.AddTransient<IProductService, ProductService>();
 
 
             return services;

@@ -65,7 +65,6 @@ namespace DogShop.Controllers
             return Ok(wishlist);
         }
 
-        //async task to delete wishlist by id
         [HttpDelete("DeleteWishlist/{id}")]
         public async Task<IActionResult> DeleteWishlist(Guid id)
         {
