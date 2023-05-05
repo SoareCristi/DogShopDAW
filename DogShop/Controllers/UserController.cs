@@ -34,7 +34,7 @@ namespace DogShop.Controllers
 
             Console.WriteLine(user.Id);
 
-            return Ok();
+            return Ok(user.Id);
         }
 
 
@@ -80,9 +80,9 @@ namespace DogShop.Controllers
             var response = _userService.Authentificate(user);
             if (response == null)
             {
-                return BadRequest("Username or password is invalid!");
+                return NotFound("Username or password is invalid!");
             }
-            return Ok();
+            return Ok(response);//mod
         }
 
         [HttpPut("UpdateUser/{id}")]
@@ -91,7 +91,7 @@ namespace DogShop.Controllers
             var user = _userService.GetById(id);
             if (user == null)
             {
-                return BadRequest("Id not found");
+                return NotFound("Id not found");
             }
             user.FirstName = updateUser.FirstName;
             user.LastName = updateUser.LastName;

@@ -28,7 +28,7 @@ namespace DogShop.Controllers
             };
             await _productService.Create(product);
             Console.WriteLine(product.Id);
-            return Ok();
+            return Ok(product.Id);
         }
 
         [HttpPut("UpdateProduct/{id}")]
@@ -37,7 +37,7 @@ namespace DogShop.Controllers
             var product = _productService.GetById(id);
             if (product == null)
             {
-                return BadRequest("Product does not exist");
+                return NotFound("Product does not exist");
             }
             product.Name = updateProduct.Name;
             product.Price = updateProduct.Price;
@@ -52,7 +52,7 @@ namespace DogShop.Controllers
             var product = _productService.GetById(id);
             if (product == null)
             {
-                return BadRequest("Product does not exist");
+                return NotFound("Product does not exist");
             }
             return Ok(product);
         }
@@ -63,7 +63,7 @@ namespace DogShop.Controllers
             var product = _productService.GetById(id);
             if (product == null)
             {
-                return BadRequest("Product does not exist");
+                return NotFound("Product does not exist");
             }
             await _productService.Delete(product);
             _productService.Save();

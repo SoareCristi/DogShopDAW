@@ -31,14 +31,14 @@ namespace DogShop.Controllers
             var user = _userService.GetById(wishlist.UserId);
             if (user == null)
             {
-                return BadRequest("User does not exist");
+                return NotFound("User does not exist");
             }
 
             await _wishlistService.Create(wishlist);
             Console.WriteLine(wishlist.Id);
             user.WishlistId = wishlist.Id;
             _userService.Save();
-            return Ok();
+            return Ok(wishlist.Id);
         }
 
         [HttpPut("UpdateWishlist/{id}")]
@@ -47,7 +47,7 @@ namespace DogShop.Controllers
             var wishlist = _wishlistService.GetById(id);
             if (wishlist == null)
             {
-                return BadRequest("Wishlist does not exist");
+                return NotFound("Wishlist does not exist");
             }
             wishlist.UserId = updateWishlist.UserId;
             wishlist.DateModified = DateTime.Now;
@@ -80,7 +80,7 @@ namespace DogShop.Controllers
             var wishlist = _wishlistService.GetById(id);
             if (wishlist == null)
             {
-                return BadRequest("Wishlist does not exist");
+                return NotFound("Wishlist does not exist");
             }
             await _wishlistService.Delete(wishlist);
             _wishlistService.Save();

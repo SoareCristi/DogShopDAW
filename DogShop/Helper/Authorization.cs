@@ -23,10 +23,11 @@ namespace DogShop.Helper
                 context.Result = unauthorizedStatusObject;
             }
 
-            var user = (User)context.HttpContext.Items["User"];
+            User? user = context.HttpContext.Items["User"] as User;
 
             if (user == null || !_roles.Contains(user.Role))
             {
+                Console.WriteLine("asdfASaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                 context.Result = unauthorizedStatusObject;
             }
         }
