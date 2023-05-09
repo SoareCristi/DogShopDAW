@@ -67,10 +67,17 @@ namespace DogShop.Controllers
             return Ok(wishlist);
         }
 
-        [HttpGet("GetAllWishlistsWithProducts")]
+        [HttpGet("GetWishlistsWithProductsMore50")]
         public async Task<IActionResult> GetAllWishlistsWithProducts()
         {
             var wishlists = _wishlistService.GetAllWishlistsWithProducts();
+            return Ok(wishlists);
+        }
+
+        [HttpGet("GetAllWishlistsWithProducts")]
+        public async Task<IActionResult> GetWishlistsWithProducts()
+        {
+            var wishlists = _wishlistService.WishlistsWithProducts();
             return Ok(wishlists);
         }
 
@@ -83,7 +90,7 @@ namespace DogShop.Controllers
                 return NotFound("Wishlist does not exist");
             }
             await _wishlistService.Delete(wishlist);
-            _wishlistService.Save();
+            await _wishlistService.Save();
             return Ok();
         }
 

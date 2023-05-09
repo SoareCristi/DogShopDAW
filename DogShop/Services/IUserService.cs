@@ -9,7 +9,7 @@ namespace DogShop.Services
         Task Delete(User userToDelete);
         Task Update(User updateUser);
         User GetById(Guid id);
-        bool Save();
+        Task Save();
         UserResponseDTO Authentificate(UserRequestDTO model);
         List<User> GetAllUsers();
         User GetByEmail(string email);

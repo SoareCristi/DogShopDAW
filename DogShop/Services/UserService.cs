@@ -13,10 +13,11 @@ namespace DogShop.Services
         public IJwtUtils _jwtUtils;
         public IUnitOfWork _unitOfWork;
 
-        public UserService(IUserRepository userRepo, IJwtUtils jwtUtils)
+        public UserService(IUserRepository userRepo, IJwtUtils jwtUtils, IUnitOfWork unitOfWork)
         {
             _userRepo = userRepo;
             _jwtUtils = jwtUtils;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task Create(User user)
@@ -36,9 +37,9 @@ namespace DogShop.Services
             return _userRepo.FindById(id);
         }
 
-        public bool Save()
+        public async Task Save()
         {
-            return _userRepo.Save();
+            await _unitOfWork.SaveAsync();
         }
 
         public async Task Update(User updateUser)

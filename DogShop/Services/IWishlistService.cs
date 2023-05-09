@@ -7,8 +7,9 @@ namespace DogShop.Services
         Task Create(Wishlist wishlist);
         Task Delete(Wishlist wishlist);
         Wishlist GetById(Guid id);
-        bool Save();
+        Task Save();
         Task Update(Wishlist updateWishlist);
         IEnumerable<IGrouping<Guid, dynamic>> GetAllWishlistsWithProducts();
+        IQueryable<AssociativeProductWishlist> WishlistsWithProducts();
     }
 }

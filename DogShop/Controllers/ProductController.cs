@@ -66,7 +66,7 @@ namespace DogShop.Controllers
                 return NotFound("Product does not exist");
             }
             await _productService.Delete(product);
-            _productService.Save();
+            await _productService.Save();
             return Ok();
         }
 

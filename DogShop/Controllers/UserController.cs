@@ -98,7 +98,7 @@ namespace DogShop.Controllers
             user.Email = updateUser.Email;
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(updateUser.Password);
             user.DateModified = DateTime.Now;
-            _userService.Save();
+            await _userService.Save();
             return Ok();
         }
 
@@ -132,7 +132,7 @@ namespace DogShop.Controllers
         }
 
         [HttpDelete("DeleteUser/{id}")]
-        //[Authorization(Roles.WebAdmin, Roles.Admin)]
+        [Authorization(Roles.WebAdmin, Roles.Admin)]
         public async Task<IActionResult> DeleteUser(Guid id)
         {
             var user = _userService.GetById(id);
@@ -141,7 +141,7 @@ namespace DogShop.Controllers
                 return NotFound();
             }
             await _userService.Delete(user);
-            _userService.Save();
+            await _userService.Save();
             return Ok();
         }
 

@@ -48,5 +48,11 @@ namespace DogShop.Repositories
             return wishlistsWithProducts.GroupBy(g => g.WishlistId);
         }
 
+        public IQueryable<AssociativeProductWishlist> WishlistsWithProducts()
+        {
+            return _context.AssociativeProductWishlists
+                .Include(apw => apw.Product);
+        }
+
     }
 }

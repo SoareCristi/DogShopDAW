@@ -1,4 +1,5 @@
 ﻿//using DogShop.Data.UitOfWork;
+using DogShop.Data;
 using DogShop.Helper;
 using DogShop.Repositories;
 using DogShop.Services;
@@ -21,6 +22,7 @@ namespace DogShop.Helper.Extensions
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IWishlistService, WishlistService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 
             return services;

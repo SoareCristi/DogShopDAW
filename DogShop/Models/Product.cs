@@ -1,4 +1,5 @@
 ﻿using DogShop.Models.Base;
+using System.Text.Json.Serialization;
 
 namespace DogShop.Models
 {
@@ -6,7 +7,9 @@ namespace DogShop.Models
     {
         public int Price { get; set; }
         public string Name { get; set; }
+        [JsonIgnore]
         public ICollection<AssociativeProductOrder> OrderAssociative { get; set; }
+        [JsonIgnore]
         public ICollection<AssociativeProductWishlist> WishlistAssociative { get; set; }
 
     }

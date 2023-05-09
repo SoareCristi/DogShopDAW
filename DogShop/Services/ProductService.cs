@@ -1,15 +1,18 @@
 ﻿using DogShop.Repositories;
 using DogShop.Models;
+using DogShop.Data;
 
 namespace DogShop.Services
 {
     public class ProductService: IProductService
     {
         public IProductRepository _productRepo;
+        public IUnitOfWork _unitOfWork;
 
-        public ProductService(IProductRepository productRepo)
+        public ProductService(IProductRepository productRepo, IUnitOfWork unitOfWork)
         {
             _productRepo = productRepo;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task Create(Product product)
@@ -29,15 +32,15 @@ namespace DogShop.Services
             return _productRepo.FindById(id);
         }
 
-        public bool Save()
+        public async Task Save()
         {
-            return _productRepo.Save();
+            await _unitOfWork.SaveAsync();//_productRepo.Save();
         }
 
         public async Task Update(Product updateProduct)
         {
             _productRepo.Update(updateProduct);
-            await _productRepo.SaveAsync();
+            await _unitOfWork.SaveAsync();
         }
     }
 }
